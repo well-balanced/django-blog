@@ -4,20 +4,15 @@
 </head>
 <body>
     <div>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        <h1><a href="/">Cosmian's blog</a></h1>
     </div>
 
-    <div>
-        <p>published: 16.09.2019, 12:40</p>
-        <h2><a href="">My First post</a></h2>
-        <p>It's better to be hated for what you are than to be loved for what you are not.</p>
-    </div>
-
-    <div>
-        <p>published: 16.09.2019, 12:40</p>
-        <h2><a href="">My second post</a></h2>
-        <p>I'm worried about my future. so I can't stay now. I have to study now.</p>
-    </div>
+    {% for post in posts%}
+        <div>
+            <p>published: {{post.published_date}}</p>
+            <h1><a href="">{{post.title}}</a></h1>
+            <p>{{post.text|linebreaksbr}}</p>
+        </div>
+    {%endfor%}
 </body>
 </html>
