@@ -10,9 +10,10 @@
 <body>
         <div class="page-header"> 
             {% if user.is_authenticated %}
-                <a href = "{% url 'post_new' %}" class="top-menu"><span class = "glyphicon plyphicon-plus"></span></a>
-                <h1><a href="/">Cosmian's blog</a></h1>
+                <a class="top-menu" href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon plyphicon-edit"></span></a>
             {% endif %}
+            <h1><a href="/">WELCOME TO COSMIAN BLOG</a></h1>
         </div>
         <div class="content container">
             <div class="row">
