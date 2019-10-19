@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    {% if from.errors %}
+        <p>your ID and passward is wrong. try again.</p>
+    {% endif %}
+
+    <form method="post" action="{% url 'login'%}">
+    {% csrf %}
+        <table>
+        <tr>
+            <td>{{ form.username.label_tag }}</td>
+            <td>{{ form.username }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.passward.label_tag}}</td>
+            <td>{{ form.passward}}</td>
+        </tr>
+        </table>
+
+        <input type="submit" value="login" />
+        <input type="hidden" name="text" value="{{ next }}" />
+    </from>
+{% endblock %}
